@@ -18,18 +18,12 @@ module.exports = {
     env: {
         browser: true,
     },
-    // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
-    extends: ["eslint:recommended", "plugin:react/recommended"],
+    extends: ["react-app", "eslint:recommended", "plugin:react/recommended"],
     plugins: [
         "class-property"
     ],
-    // add your custom rules here
     "rules": {
-        //"off"或 0 -关闭规则
-        //"warn" 或 1 - 开启规则, 使用警告 程序不会退出
-        //"error"或 2 - 开启规则, 使用错误 程序退出
         "indent": [2, 4],
-        //分号
         "eqeqeq": 0,
         "no-useless-escape": 0,
         "brace-style": 0,//大括号风格
