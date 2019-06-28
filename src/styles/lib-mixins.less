@@ -1,0 +1,69 @@
+
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+.hide-text() {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+// Force line breaks
+// -------------------------
+.word-break() {
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+// No wrap
+// -------------------------
+.no-wrap() {
+    word-break: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+}
+
+// Text overflow with(...)
+// -------------------------
+// Requires inline-block or block for proper styling
+.text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.line-overflow(@line) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @line; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+// Controls the selection model of an element.
+// -------------------------
+.user-select(@arguments:none) {
+    -webkit-user-select: @arguments;
+    -moz-user-select: @arguments;
+    -ms-user-select: @arguments;
+    user-select: @arguments;
+}
+.placeholdercolor(@color:#fff,@fontSize:16px){
+    input::-webkit-input-placeholder{
+        color: @color;
+        font-size:@fontSize;
+    }
+    input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+        color: @color;
+        font-size:@fontSize;
+    }
+    input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+        color: @color;
+        font-size:@fontSize;
+    }
+    input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+        color: @color;
+        font-size:@fontSize;
+    }
+}

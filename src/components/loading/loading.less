@@ -1,0 +1,39 @@
+.loading {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    .common_loading {
+        position: fixed;
+        z-index: 11;
+        left: 50%;
+        top: 50%;
+        width: 12vw;
+        height: 12vw;
+        border-radius: 50%;
+        overflow: hidden;
+        background: url(~@/assets/img/loading.png) no-repeat center;
+        background-size: cover;
+        animation: loading 2s infinite linear;
+        transform-origin: center;
+    }
+}
+
+@keyframes loading {
+    0% {
+        width: 12vw;
+        height: 12vw;
+        transform: translate(-50%, -50%) rotate(0);
+    }
+
+    100% {
+        width: 12vw;
+        height: 12vw;
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+.hide {
+    display: none;
+}

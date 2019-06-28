@@ -1,0 +1,366 @@
+@vw: 10/75vw;
+@color_green: #359f6e;
+@color_yellow: #ff8f00;
+.yellow {
+  color: @color_yellow;
+}
+.page_questionnaire {
+  min-height: 100vh;
+  background: #e0e7e9;
+  color: #333;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20 * @vw;
+  height: 110 * @vw;
+  background: @color_green;
+  font-size: 42 * @vw;
+  color: #fff;
+  font-weight: bold;
+  .btn_back {
+    width: 58 * @vw;
+    height: 100%;
+    overflow: hidden;
+    background: url(./img/btn_back.png) no-repeat center;
+    background-size: 18 * @vw;
+  }
+  .btn_help {
+    width: 84 * @vw;
+    height: 100%;
+    overflow: hidden;
+    background: url(./img/btn_quest.png) no-repeat center;
+    background-size: 44 * @vw;
+  }
+}
+.main {
+  position: relative;
+  width: 630 * @vw;
+  margin: 37 * @vw auto 0;
+  text-align: center;
+  .msg_thank {
+    width: 520 * @vw;
+    margin: 0 auto 30 * @vw;
+    line-height: 40 * @vw;
+    font-size: 28 * @vw;
+  }
+  .question_modules {
+    width: 630 * @vw;
+    display: none;
+    // display: block;
+    &.on {
+      display: block;
+    }
+  }
+  .msg_progress {
+    display: flex;
+    justify-content: center;
+    font-size: 28 * @vw;
+    height: 40 * @vw;
+    line-height: 40 * @vw;
+    overflow: hidden;
+    .questSort {
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  .quest_title {
+    line-height: 45 * @vw;
+    margin: 16 * @vw auto 30 * @vw;
+    text-align: left;
+    font-weight: bold;
+    font-size: 32 * @vw;
+  }
+  .quest_lists {
+    position: relative;
+    overflow: hidden;
+  }
+  .quest_list {
+    position: relative;
+    z-index: 1;
+    box-sizing: content-box;
+    height: 100 * @vw;
+    line-height: 100 * @vw;
+    overflow: hidden;
+    white-space: nowrap;
+    border-radius: 10 * @vw;
+    font-size: 32 * @vw;
+    font-weight: bold;
+    background: #fff;
+    transition: background, color 0.2s ease-in-out;
+    &.small {
+      font-size: 24 * @vw;
+    }
+    & + .quest_list {
+      margin-top: 20 * @vw;
+    }
+
+    &.input {
+      border: 4 * @vw solid rgba(254, 144, 3, 1);
+      input {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        text-indent: 25 * @vw;
+      }
+      input::-webkit-input-placeholder {
+        color: #878787;
+        font-size: 32 * @vw;
+      }
+      input::-moz-placeholder {
+        color: #878787;
+        font-size: 32 * @vw;
+      }
+      input:-moz-placeholder {
+        color: #878787;
+        font-size: 32 * @vw;
+      }
+      input:-ms-input-placeholder {
+        color: #878787;
+        font-size: 32 * @vw;
+      }
+    }
+    &.textarea {
+      position: relative;
+      height: 330 * @vw;
+      border: 4 * @vw solid rgba(53, 159, 110, 1);
+      textarea {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        padding: 17 * @vw 13 * @vw;
+        line-height: 45 * @vw;
+      }
+      .maxNum {
+        position: absolute;
+        right: 10 * @vw;
+        bottom: 0;
+        line-height: 45 * @vw;
+        color: #878787;
+        font-size: 32 * @vw;
+        font-weight: normal;
+      }
+    }
+    &.iconLudoKing {
+      text-align: left;
+      text-indent: 220 * @vw;
+      background: #fff url(./img/icon/icon_ludoKing.jpg) no-repeat 122 * @vw
+        center;
+      background-size: 68 * @vw;
+    }
+    &.iconLudoTalent {
+      text-align: left;
+      text-indent: 220 * @vw;
+      background: #fff url(./img/icon/icon_LudoTalent.jpg) no-repeat 122 * @vw
+        center;
+      background-size: 68 * @vw;
+    }
+    &.iconCarromKing {
+      text-align: left;
+      text-indent: 220 * @vw;
+      background: #fff url(./img/icon/icon_CarromKing.jpg) no-repeat 122 * @vw
+        center;
+      background-size: 68 * @vw;
+    }
+    &.iconFIFASoccer {
+      text-align: left;
+      text-indent: 220 * @vw;
+      background: #fff url(./img/icon/icon_FifaSoccer.jpg) no-repeat 122 * @vw
+        center;
+      background-size: 68 * @vw;
+    }
+    &.icon8BallPool {
+      text-align: left;
+      text-indent: 220 * @vw;
+      background: #fff url(./img/icon/icon_8ball.jpg) no-repeat 122 * @vw
+        center;
+      background-size: 68 * @vw;
+    }
+    &.iconDream11 {
+      text-align: left;
+      text-indent: 220 * @vw;
+      background: #fff url(./img/icon/icon_Dream11.jpg) no-repeat 122 * @vw
+        center;
+      background-size: 68 * @vw;
+    }
+    &.iconTeenPattibyOctro {
+      text-align: left;
+      text-indent: 220 * @vw;
+      background: #fff url(./img/icon/icon_TeenPattiByOctro.jpg) no-repeat 122 *
+        @vw center;
+      background-size: 68 * @vw;
+    }
+    &.iconTeenPattiGold {
+      text-align: left;
+      text-indent: 220 * @vw;
+      background: #fff url(./img/icon/iconTeenPattiGold.jpg) no-repeat 122 *
+        @vw center;
+      background-size: 68 * @vw;
+    }
+    &.iconScratchDay {
+      text-align: left;
+      text-indent: 220 * @vw;
+      background: #fff url(./img/icon/icon_ScratchDay.jpg) no-repeat 122 * @vw
+        center;
+      background-size: 68 * @vw;
+    }
+    &.iconCandyCrushSaga {
+      text-align: left;
+      text-indent: 220 * @vw;
+      background: #fff url(./img/icon/icon_CandyCrushsaga.jpg) no-repeat 122 *
+        @vw center;
+      background-size: 68 * @vw;
+    }
+    &.iconCoinMaster {
+      text-align: left;
+      text-indent: 220 * @vw;
+      background: #fff url(./img/icon/icon_CoinMaster.jpg) no-repeat 122 * @vw
+        center;
+      background-size: 68 * @vw;
+    }
+    &.iconHomescapes {
+      text-align: left;
+      text-indent: 220 * @vw;
+      background: #fff url(./img/icon/icon_Homescapes.jpg) no-repeat 122 * @vw
+        center;
+      background-size: 68 * @vw;
+    }
+    &.iconOther {
+      text-align: left;
+      text-indent: 220 * @vw;
+      //   background: #fff url(./img/icon/icon_Homescapes.jpg) no-repeat 122 * @vw
+      //     center;
+      //   background-size: 68 * @vw;
+    }
+    &.on {
+      background-color: @color_yellow;
+      color: #fff;
+    }
+  }
+  .btn_quest {
+    width: 480 * @vw;
+    height: 100 * @vw;
+    overflow: hidden;
+    margin: 80 * @vw auto 0;
+    line-height: 100 * @vw;
+    background: rgba(53, 159, 110, 1);
+    border-radius: 10 * @vw;
+    font-size: 36 * @vw;
+    color: rgba(255, 255, 255, 0.5);
+    &.on {
+      color: #fff;
+      transition: all 0.2s;
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+}
+.pop_layer {
+  position: fixed;
+}
+.pop_quest {
+  position: fixed;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 616 * @vw;
+  overflow: hidden;
+  padding: 0 58 * @vw 37 * @vw;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20 * @vw;
+  .btn {
+    width: 100%;
+    height: 100 * @vw;
+    overflow: hidden;
+    text-align: center;
+    line-height: 100 * @vw;
+    border-radius: 10 * @vw;
+    white-space: nowrap;
+    font-size: 32 * @vw;
+  }
+  .btn_confirm {
+    background: @color_green;
+    color: #fff;
+  }
+  .btn_cancel {
+    margin-top: 22 * @vw;
+    background: rgba(217, 222, 223, 1);
+  }
+}
+.pop_help {
+  padding-top: 70 * @vw;
+  padding-bottom: 55 * @vw;
+  .msg {
+    line-height: 40 * @vw;
+    font-size: 28 * @vw;
+  }
+  .btn_confirm {
+    margin-top: 36 * @vw;
+  }
+}
+.pop_submit {
+  .msg {
+    text-align: center;
+    line-height: 45 * @vw;
+    margin: 86 * @vw auto 70 * @vw;
+    font-size: 32 * @vw;
+  }
+}
+.pop_success {
+  padding-top: 42 * @vw;
+  padding-bottom: 55 * @vw;
+  .title {
+    text-align: center;
+    line-height: 50 * @vw;
+    font-size: 36 * @vw;
+    white-space: nowrap;
+    color: @color_green;
+  }
+  img {
+    display: block;
+    width: 84 * @vw;
+    margin: 38 * @vw auto 26 * @vw;
+  }
+  .msg {
+    text-align: center;
+    line-height: 40 * @vw;
+    font-size: 28 * @vw;
+    margin: 0 auto 30 * @vw;
+  }
+}
+.pop_error {
+  padding-top: 42 * @vw;
+  padding-bottom: 37 * @vw;
+  .title {
+    text-align: center;
+    line-height: 50 * @vw;
+    font-size: 36 * @vw;
+    white-space: nowrap;
+    color: rgba(62, 62, 62, 1);
+  }
+  img {
+    display: block;
+    width: 81 * @vw;
+    margin: 23 * @vw auto 24 * @vw;
+  }
+  .msg {
+    text-align: center;
+    line-height: 40 * @vw;
+    font-size: 28 * @vw;
+    margin: 0 auto 17 * @vw;
+  }
+}
+.pop_repeat {
+  padding-top: 93 * @vw;
+  padding-bottom: 55 * @vw;
+  .msg {
+    text-align: center;
+    line-height: 62 * @vw;
+    font-size: 44 * @vw;
+    margin-bottom: 70 * @vw;
+  }
+}
