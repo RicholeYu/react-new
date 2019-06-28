@@ -1,8 +1,6 @@
 import React from "react"
 import Transition from "@/components/transition"
-import {
-    $get, $post
-} from "@/plugins/ajax"
+import Ajax from "@/plugins/ajax"
 import { cbetLocal } from "@/common/util"
 interface Option {
     content: string
@@ -121,7 +119,7 @@ class Question extends React.Component {
 
     submitIt = () => {
         this.closePop()
-        $post("/survey/commit", {
+        Ajax.$post("/survey/commit", {
             answer: this.state.anwsers.join("$"),
             paperid: this.state.paperid
         }, {
@@ -148,7 +146,7 @@ class Question extends React.Component {
     }
 
     componentDidMount () {
-        $get("/survey/paper").then((res:any) => {
+        Ajax.$get("/survey/paper").then((res:any) => {
             let notRelateQuestions:Question [] = []
             let relateQuestion:object = {}
             res.data.quetions.map((question:Question) => {

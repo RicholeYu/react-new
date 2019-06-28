@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
-
+import "./loading.less"
 const $loadingEl = document.createElement("div")
 document.body.appendChild($loadingEl)
 
@@ -17,10 +17,19 @@ export class Loading extends React.Component<Props> {
         )
     }
 }
+
+let isLoading:boolean = false
+
 export function showLoading () {
-    ReactDOM.render(<Loading isLoading={true} />, $loadingEl)
+    if (!isLoading) {
+        isLoading = true
+        ReactDOM.render(<Loading isLoading={isLoading} />, $loadingEl)
+    }
 }
 
 export function hideLoading () {
-    ReactDOM.render(<Loading isLoading={false} />, $loadingEl)
+    if (isLoading) {
+        isLoading = false
+        ReactDOM.render(<Loading isLoading={isLoading} />, $loadingEl)
+    }
 }

@@ -3,7 +3,8 @@
 const path = require("path")
 const fs = require("fs")
 const url = require("url")
-
+const part = require("../build_part")[process.env.NODE_ENV]
+const hasPart = !!process.env.PART
 // Make sure any symlinks in the project folder are resolved:
 // https://github.com/facebook/create-react-app/issues/637
 const appDirectory = fs.realpathSync(process.cwd())
@@ -70,6 +71,9 @@ const getHtmls = () => {
     let pages = fs.readdirSync(pagesPath).filter(page => fs.statSync(path.resolve(pagesPath, page)).isDirectory())
     let arr = []
     pages.map(page => {
+        if (hasPart && part && part.length && part.indexOf(page) === -1) {
+            return
+        }
         let filename = `${page}.html`
         let defaultJsPath = resolveModule(resolveApp, `src/pages/${page}/index`)
         let htmls = fs.readdirSync(path.resolve(pagesPath, page)).filter(filename => filename.indexOf(".html") > -1)
@@ -91,6 +95,7 @@ module.exports = {
     dotenv: resolveApp(".env"),
     appPath: resolveApp("."),
     appBuild: resolveApp("build"),
+    appStatic: resolveApp("static"),
     appPublic: resolveApp("public"),
     appHtml: resolveApp("public/index.html"),
     appHtmls: getHtmls(),

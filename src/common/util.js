@@ -17,14 +17,14 @@ window.cbetLocalCallback = function (param) {
             })
         }
     } else if (param.func === "shareLink") {
-        event.$emit("shareLink", param.result)
+        // event.$emit("shareLink", param.result)
     } else if (param.func === "shareToMessenger") {
-        event.$emit("shareToMessenger", param.result)
+        // event.$emit("shareToMessenger", param.result)
     }
 }
 
 window.showAdVideoCallback = function (data) {
-    event.$emit("showAdVideoCallback", data)
+    // event.$emit("showAdVideoCallback", data)
 }
 
 export function isEqualOrHigherThanVersion (_version) {

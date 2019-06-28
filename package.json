@@ -79,10 +79,11 @@
   "scripts": {
     "start": "node scripts/start.js",
     "start-console": "cross-env CONSOLE=true node scripts/start.js",
-    "start-part": "cross-env node scripts/start.js",
+    "start-part": "cross-env CONSOLE=true PART=true node scripts/start.js",
     "build": "cross-env NODE_ENV=production node scripts/build.js",
-    "build-part": "cross-env NODE_ENV=production node scripts/build.js",
+    "build-part": "cross-env NODE_ENV=production PART=true node scripts/build.js",
     "build-test": "cross-env NODE_ENV=release node scripts/build.js",
+    "build-test-part": "cross-env NODE_ENV=release PART=true node scripts/build.js",
     "test": "node scripts/test.js"
   },
   "browserslist": {
